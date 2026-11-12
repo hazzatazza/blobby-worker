@@ -30,7 +30,7 @@ export class Hub {
     s = s && typeof s === 'object' ? s : {};
     const pow = {};
     for (const k of ['speed', 'shield', 'ghost', 'magnet', 'steal']) pow[k] = !s.pow || s.pow[k] !== false;
-    return { mode: String(s.mode || 'ffa').slice(0, 12), diff: String(s.diff || 'Normal').slice(0, 12), map: Math.max(1, Math.min(10, +s.map || 3)), pow };
+    return { mode: String(s.mode || 'ffa').slice(0, 12), diff: String(s.diff || 'Normal').slice(0, 12), map: Math.max(1, Math.min(10, +s.map || 3)), pow, vir: s.vir !== false };
   }
 
   onMsg(c, raw) {
